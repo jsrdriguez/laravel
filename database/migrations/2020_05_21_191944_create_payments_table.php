@@ -14,7 +14,7 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->uuid("id")->unique();
+            $table->uuid("id")->primary();
             $table->timestamp('payment_date')->nullable();
             $table->timestamp('expires_at');
             $table->string('status');

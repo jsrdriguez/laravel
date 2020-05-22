@@ -16,7 +16,7 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
 			$table->unsignedBigInteger('user_id')->unique();
-			$table->date('join_date');
+			$table->timestamp('join_date');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

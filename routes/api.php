@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/clients', 'Api\v1\ClientController@index');
+Route::get('/payments', 'Api\v1\PaymentController@client');
+Route::post('/payments', 'Api\v1\PaymentController@store');

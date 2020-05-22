@@ -13,9 +13,10 @@ class CreateIndicatorTable extends Migration
      */
     public function up()
     {
-        Schema::create('indicator', function (Blueprint $table) {
+        Schema::create('indicators', function (Blueprint $table) {
             $table->id();
             $table->double('value');
+            $table->timestamp('date');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -28,6 +29,6 @@ class CreateIndicatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('indicator');
+        Schema::dropIfExists('indicators');
     }
 }
